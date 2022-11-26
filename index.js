@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const authRoute = require("./routes/authRoute");
 const usersRoute = require("./routes/usersRoute");
+const postsRoute = require("./routes/postsRoute");
 
 app.use(express.json());
 app.use(cors());
@@ -24,5 +25,6 @@ mongoose
 // routes
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
+app.use("/api/posts", postsRoute);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
