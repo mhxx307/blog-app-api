@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const multer = require("multer");
+const path = require("path");
 
 const authRoute = require("./routes/authRoute");
 const usersRoute = require("./routes/usersRoute");
@@ -13,6 +14,7 @@ const categoriesRoute = require("./routes/categoriesRoute");
 app.use(express.json());
 app.use(cors());
 dotenv.config();
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 const port = 5000;
 
 // connect mongodb
