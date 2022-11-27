@@ -11,6 +11,8 @@ const usersRoute = require("./routes/usersRoute");
 const postsRoute = require("./routes/postsRoute");
 const categoriesRoute = require("./routes/categoriesRoute");
 
+const port = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(cors());
 dotenv.config();
@@ -47,6 +49,6 @@ app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/categories", categoriesRoute);
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`app is running on port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`app is running on port ${port}`);
 });
