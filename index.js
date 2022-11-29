@@ -10,6 +10,7 @@ const authRoute = require("./routes/authRoute");
 const usersRoute = require("./routes/usersRoute");
 const postsRoute = require("./routes/postsRoute");
 const categoriesRoute = require("./routes/categoriesRoute");
+const uploadRouter = require("./routes/uploadCloudinaryRoute");
 
 const port = process.env.PORT || 5000;
 
@@ -48,6 +49,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/categories", categoriesRoute);
+app.use("/api/upload2", uploadRouter);
 
 app.listen(port, () => {
     console.log(`app is running on port ${port}`);
